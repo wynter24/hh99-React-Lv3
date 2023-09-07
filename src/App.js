@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Buttons from "./components/Buttons/Buttons";
+import Input from "./components/Input";
+import Select from "./components/Select";
+import Modal from './components/Modal/Modal';
+import OverlayModal from './components/Modal/OverlayModal';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ margin: "8px" }}>
+      <Buttons />
+      <Input />
+      
+      <div>
+        <h1>Modal</h1>
+        <div style={{ display: "flex", gap:"10px" }}>
+          <Modal />
+          <OverlayModal />
+        </div>
+      </div>
+
+      <Select />
     </div>
   );
 }
