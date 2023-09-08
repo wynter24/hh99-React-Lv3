@@ -24,12 +24,9 @@ const Select = () => {
 
     if (item === "select") {
       setOpen(changeSelect);
-      // return(<SelectZone style={{overflow: 'visible'}}></SelectZone>)
     } else {
       setOpen(changeHidden);
-      // return(<SelectZone style={{overflow: 'hidden'}}></SelectZone>)
     }
-    // item == "select" ? setOpen(!open.select) : setOpen(!open.hiddenSelect);
   };
   // console.log("select",open);
 
@@ -42,16 +39,23 @@ const Select = () => {
     if (!portalTarget) {
       return null;
     }
-    return ReactDOM.createPortal(<div>{children}</div>, portalTarget);
+    return ReactDOM.createPortal(
+      <div style={{ position: "absolute", top: "634px", left: "10px" }}>
+        {children}
+      </div>,
+      portalTarget
+    );
   };
 
   return (
     <SelectZone>
       <h1>Select</h1>
       <div style={{ display: "flex", gap: "10px" }}>
-        <div style={{position:"relative"}}> {/* portal의 부보요소 */}
+        <div>
+          {" "}
+          {/* portal의 부보요소 */}
           <SelectBtn
-            id='portal-target'
+            id="portal-target"
             onClick={() => {
               dropdownDisplay("select");
             }}
@@ -63,7 +67,7 @@ const Select = () => {
             <div>{selected}</div>
             <div>▼</div>
           </SelectBtn>
-          <Portal style={{position: "absolute", }}>
+          <Portal>
             <Ul open={open.select}>
               {/* open 상태를 props로 전달 - styled component에게 */}
               {selectList.map((item) => {
@@ -153,6 +157,7 @@ const Option = styled.li`
   width: 300px;
   font-size: 12px;
   white-space: nowrap;
+  text-align: start;
 `;
 
 export default Select;

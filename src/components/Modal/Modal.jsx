@@ -43,8 +43,14 @@ function ModalBasic({ setModalOpen }) {
       <p>
         닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.
       </p>
-      <button onClick={closeModal}>닫기</button>
-      <button>확인</button>
+      <ButtonBox>
+        <StyledButton size="small" color="mint" onClick={closeModal}>
+          닫기
+        </StyledButton>
+        <StyledButton size="small" color="purple">
+          확인
+        </StyledButton>
+      </ButtonBox>
     </BasicContainer>
   );
 }
@@ -69,8 +75,16 @@ const BasicContainer = styled.div`
 
   /* ModalOverlay 모달창 디자인 */
   background-color: white;
-  border: 3px solid #346F62;
+  border: 3px solid #346f62;
   border-radius: 12px;
   box-sizing: border-box;
   padding: 24px;
 `;
+
+const ButtonBox = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 24px;
+  gap: 8px;
+`

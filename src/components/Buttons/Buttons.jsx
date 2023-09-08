@@ -84,7 +84,7 @@ function Buttons() {
         >
           <div>Large Primary Button</div>
           <div>
-            <span class="material-symbols-outlined">add_circle</span>
+            <span className="material-symbols-outlined">add_circle</span>
           </div>
         </Button>
         <Button size="medium" color="mint" fontcolor="deep_mint">
@@ -98,7 +98,7 @@ function Buttons() {
         <Button size="large" color="purple" onClick={() => prompt("어렵나요?")}>
           <div>Large Negative Button</div>
           <div>
-            <span class="material-symbols-outlined">cancel</span>
+            <span className="material-symbols-outlined">cancel</span>
           </div>
         </Button>
         <Button size="medium" color="purple" fontcolor="deep_purple">
@@ -113,3 +113,7 @@ function Buttons() {
 }
 
 export default Buttons;
+
+
+  
+
