@@ -1,9 +1,9 @@
 import React from "react";
 import { css, styled, ThemeProvider } from "styled-components";
 
-function Button({ children, color, size, fontcolor }) {
+function Button({ children, color, size, fontcolor, onClick }) {
   return (
-    <StyledButton color={color} size={size} fontcolor={fontcolor}>
+    <StyledButton color={color} size={size} fontcolor={fontcolor} onClick={onClick}>
       {children}
     </StyledButton>
   );
@@ -80,7 +80,7 @@ function Buttons() {
         <Button
           size="large"
           color="mint"
-          onClick={() => alert("버튼을 만들어보세요")}
+          onClick={() => window.alert("버튼을 만들어보세요")}
         >
           <div>Large Primary Button</div>
           <div>
